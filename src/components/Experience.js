@@ -28,7 +28,24 @@ function Experience()
                             "Responsabilidad 3",
                             "Responsabilidad 4"
                             ]
+                            
+        },
+        {
+            // tercer trabajo trabajo(mas reciente)
+               puesto:"Practica laboral",
+               empresa: "Duoc UC",
+               ubicacion: "Los Vilos",
+               periodo: "Enero 2023 - Junio 2023",
+               reponsabilidades:[
+                               "Responsabilidad 1",
+                               "Responsabilidad 2",
+                               "Responsabilidad 3",
+                               "Responsabilidad 4"
+                               ]
+                               
         }
+        
+
     ];
 
     return(
@@ -44,12 +61,28 @@ function Experience()
                     */}
                     {
                       misExperiencias.map((trabajo, index)=> (
-
-                        <h3>
-                            {trabajo.puesto}
+                        <div key={index} className='mb-4'>
+                        <h3 className='h5-fw-bold text md'>
+                        {trabajo.puesto}
                         </h3>
-                      )
                         
+                        <h4 className='h6-text-primary mb-1'>{trabajo.empresa}- {trabajo.ubicacion}
+                        </h4>
+                        <p className='text-muted mb-2'>
+                            {trabajo.periodo}
+                        </p>
+                        <ul className='list-unstyled'>
+                            {trabajo.reponsabilidades.map((responsabilidad,idx)=>(
+                            <li key={idx} className='mb-1'>
+                                {responsabilidad}
+                            </li>
+                            ))}
+                        </ul>
+                        <hr className='my-3'/>
+                     
+                        </div>
+                        )
+
                         )     
                     }
                     
